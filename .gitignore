@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Python environment definitions
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Database/IDE tracking variables
+.supabase/
+.idea/
+.vscode/
