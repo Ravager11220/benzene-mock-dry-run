@@ -4,7 +4,7 @@ import time
 BASE_URL = "http://127.0.0.1:8000"
 
 def run_simulation():
-    print("🚀 Starting Benzene Control Plane Mock Simulation...")
+    print(" Starting Benzene Control Plane Mock Simulation...")
     
     # Step 1: Simulate a decentralized GPU provider booting up
     print("\n[1/3] Registering isolated Worker Node (Simulated RTX 4090)...")
@@ -29,7 +29,7 @@ def run_simulation():
     r2 = requests.post(f"{BASE_URL}/submit-job", json=job_payload)
     print("Server Response:", r2.json())
     
-    print("\n✅ Simulation complete! Verify database state tracking entries inside Supabase.")
+    print("\n Simulation complete! Verify database state tracking entries inside Supabase.")
 
 if __name__ == "__main__":
     run_simulation()

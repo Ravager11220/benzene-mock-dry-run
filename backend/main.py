@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from supabase import create_client, Client
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = FastAPI(title="Benzene Control Plane - Mock Drill")
 
