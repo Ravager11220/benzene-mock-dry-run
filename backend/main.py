@@ -6,8 +6,8 @@ import os
 app = FastAPI(title="Benzene Control Plane - Mock Drill")
 
 # Replace these with environment variables or temporary string credentials for dev
-SUPABASE_URL = os.getenv("SUPABASE_URL", "https://your-project.supabase.co")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY", "your-anon-key")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 class WorkerRegister(BaseModel):
