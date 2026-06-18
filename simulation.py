@@ -24,7 +24,7 @@ def run_simulation():
     job_payload = {
         "client_name": "Ravager_Client_Session",
         "dataset_size_mb": 4096,
-        "task_type": "BATCH_LLM"
+        "task_type": "BATCH_LLM_PEFT"
     }
     r2 = requests.post(f"{BASE_URL}/submit-job", json=job_payload)
     print("Server Response:", r2.json())
