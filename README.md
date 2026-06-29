@@ -1,2 +1,2 @@
 # benzene-mock-dry-run
-hopefully this run. tbh if this doesnt im gonna go to the himalyas and become a monk.
+a distributed networks architecture for pooling in gpu resources.
