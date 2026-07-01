@@ -2,13 +2,13 @@ import requests
 import socket
 import json
 
-COORDINATOR_URL = "http://YOUR_DROPLET_IP:8000"  # Update with your central server URL
+COORDINATOR_URL = "http://YOUR_DROPLET_IP:8000"  
 
 def submit_job_and_stream():
-    # 1. Submit job parameters to the Control Plane
+    # submit jobparameters to control plane
     job_payload = {
         "client_name": "Team Benzene Client Pro",
-        "dataset_size_mb": 4096,  # 4GB data stays local! Only metadata goes to server
+        "dataset_size_mb": 4096, 
         "task_type": "BATCH_LLM"
     }
     
@@ -22,7 +22,7 @@ def submit_job_and_stream():
     result_metadata = response.json()
     print(f"[+] Control Plane Response received:\n{json.dumps(result_metadata, indent=2)}")
     
-    # 2. Extract Data Plane layout metadata targets
+    # extract dataplane layout
     layout = result_metadata.get("assigned_layout", {})
     worker_ip = layout.get("target_worker_ip")
     worker_port = layout.get("target_port")
@@ -32,7 +32,7 @@ def submit_job_and_stream():
         return
         
     # 3. Action Phase: Establish the Peer-to-Peer Data Plane connection
-    print(f"\n[!] CONTROL PLANE DECOUPLED: Activating direct Data Channel to Worker at {worker_ip}:{worker_port}")
+    '''print(f"\n[!] CONTROL PLANE DECOUPLED: Activating direct Data Channel to Worker at {worker_ip}:{worker_port}")
     
     try:
         # Create standard TCP socket and connect directly to your friend's machine
@@ -53,6 +53,7 @@ def submit_job_and_stream():
     finally:
         client_sock.close()
         print("[*] Client execution sequence terminated.")
+'''
 
 if __name__ == "__main__":
     submit_job_and_stream()

@@ -3,7 +3,7 @@ import json
 import requests
 
 # 1. Configuration
-COORDINATOR_URL = "http://YOUR_DROPLET_IP:8000"  # Update with your central server URL
+COORDINATOR_URL = "https://setting-gurgle-dropper.ngrok-free.dev"  # Update with your central server URL
 MY_PUBLIC_IP = "YOUR_FRIENDS_PUBLIC_IP"        # The public IP of your friend's network
 PORT = 9000                                    # Port to open for data transfer
 
@@ -20,7 +20,7 @@ def register_with_backend():
     except Exception as e:
         print(f"[-] Registration failed: {e}")
 
-def start_data_plane_listener():
+'''def start_data_plane_listener():
     # Set up a reusable TCP stream socket
     server_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -46,7 +46,8 @@ def start_data_plane_listener():
         
         conn.close()
         print("[-] Data channel closed cleanly.")
+'''
 
 if __name__ == "__main__":
     register_with_backend()
-    start_data_plane_listener()
+    #start_data_plane_listener()
