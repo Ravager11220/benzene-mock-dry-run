@@ -2,7 +2,7 @@ import requests
 import socket
 import json
 
-COORDINATOR_URL = "http://YOUR_DROPLET_IP:8000"  
+COORDINATOR_URL = "https://setting-gurgle-dropper.ngrok-free.dev"  
 
 def submit_job_and_stream():
     # submit jobparameters to control plane
